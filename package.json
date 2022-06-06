@@ -4,11 +4,12 @@
     "description": "Online 3D Viewer for Confluence",
     "main": "index.js",
     "scripts": {
-        "build": "npm run bundle && npm run copylibs && npm run copyenvmaps",
-        "bundle": "esbuild source/main.js --bundle --minify --sourcemap --outfile=public/build/o3dv-confluence.js",
+        "build": "esbuild source/main.js --bundle --minify --sourcemap --outfile=public/build/o3dv-confluence.js",
+        "dist": "npm run bundle && npm run copylibs && npm run copyenvmaps",
         "copylibs": "copyfiles --up 3 node_modules/online-3d-viewer/libs/loaders/* public/build/libs",
         "copyenvmaps": "copyfiles --up 5 node_modules/online-3d-viewer/website/assets/envmaps/**/* public/build/envmaps",
-        "ngrok": "npm run build && node tools/ngrokserver.js"
+        "ngrok_server": "node tools/ngrokserver.js",
+        "local_server": "http-server"
     },
     "repository": "github:kovacsv/Online3DViewerConfluence",
     "author": "Viktor Kovács",
