@@ -29,9 +29,7 @@ function ProcessUrlParameters (url)
 
 function OnModelFilesLoaded (parameters, fileObjects)
 {
-    let contentDiv = document.getElementById ('content');
-    contentDiv.style.width = parameters.canvasWidth;
-    contentDiv.style.height = parameters.canvasHeight;
+    OV.SetExternalLibLocation ('build/libs');
 
     let backgroundColor = new OV.Color (255, 255, 255);
     if (parameters.backgroundColor.length == 6) {
@@ -42,6 +40,7 @@ function OnModelFilesLoaded (parameters, fileObjects)
         defaultColor = OV.HexStringToColor (parameters.defaultColor);
     }
 
+    let contentDiv = document.getElementById ('content');
     let viewer = new OV.EmbeddedViewer (contentDiv, {
         backgroundColor : backgroundColor,
         defaultColor : defaultColor,
@@ -69,14 +68,21 @@ function OnModelFilesLoaded (parameters, fileObjects)
 
 function OnWindowLoaded ()
 {
-    OV.SetExternalLibLocation ('build/libs');
-
-    // TODO: progress bar for model loading
     let parameters = ProcessUrlParameters (window.location.search);
+
+    let contentDiv = document.getElementById ('content');
+    contentDiv.style.width = parameters.canvasWidth;
+    contentDiv.style.height = parameters.canvasHeight;
+
+    let progressBar = document.createElement ('div');
+    progressBar.innerHTML = 'Downloading attachments...';
+    contentDiv.appendChild (progressBar);
+
     GetAttachmentFileObjects (parameters.modelFileNames).then ((attachmentFileObjects) => {
+        contentDiv.removeChild (progressBar);
         OnModelFilesLoaded (parameters, attachmentFileObjects);
     }).catch (() => {
-        // TODO: handle error
+        progressBar.innerHTML = 'Failed to download attachments'
     });
 }
 
