@@ -29,7 +29,6 @@ function ProcessUrlParameters (url)
 
 function OnModelFilesLoaded (parameters, fileObjects)
 {
-    console.log (parameters);
     let contentDiv = document.getElementById ('content');
     contentDiv.style.width = parameters.canvasWidth;
     contentDiv.style.height = parameters.canvasHeight;
@@ -58,10 +57,8 @@ function OnModelFilesLoaded (parameters, fileObjects)
         }
     });
 
-    let width = contentDiv.clientWidth;
-    let height = contentDiv.clientHeight;
-    viewer.canvas.width = width;
-    viewer.canvas.height = height;
+    viewer.canvas.width = contentDiv.clientWidth;
+    viewer.canvas.height = contentDiv.clientHeight;
 
     viewer.LoadModelFromFileList (fileObjects);
 }
