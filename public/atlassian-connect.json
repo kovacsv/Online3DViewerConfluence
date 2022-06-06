@@ -17,7 +17,7 @@
     },
     "scopes": [
         "READ"
-    ],    
+    ],
     "modules": {
         "dynamicContentMacros": [
             {
@@ -32,7 +32,7 @@
                     "width": 64,
                     "height": 64,
                     "url": "images/3dviewer_net_logo.png"
-                },                
+                },
                 "url": "viewer.html?pageId={page.id}&file1={file1}&file2={file2}&file3={file3}&file4={file4}&file5={file5}&canvaswidth={canvaswidth}&canvasheight={canvasheight}&backgroundcolor={backgroundcolor}&defaultcolor={defaultcolor}",
                 "parameters": [
                     {
