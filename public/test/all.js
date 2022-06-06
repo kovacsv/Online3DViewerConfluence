@@ -38,12 +38,6 @@ var AP = {
                         }
                     },
                     {
-                        title : 'Samba_Dancing.fbx',
-                        _links : {
-                            download : 'test/testfiles/Samba_Dancing.fbx'
-                        }
-                    },
-                    {
                         title : 'nonexistingbuthasurl.ext',
                         _links : {
                             download : 'test/testfiles/nonexistingbuthasurl.ext'

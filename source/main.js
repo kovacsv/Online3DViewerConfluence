@@ -33,14 +33,18 @@ function OnModelFilesLoaded (parameters, fileObjects)
     contentDiv.style.width = parameters.canvasWidth;
     contentDiv.style.height = parameters.canvasHeight;
 
+    let backgroundColor = new OV.Color (255, 255, 255);
+    if (parameters.backgroundColor.length == 6) {
+        backgroundColor = OV.HexStringToColor (parameters.backgroundColor);
+    }
+    let defaultColor = new OV.Color (200, 200, 200);
+    if (parameters.defaultColor.length == 6) {
+        defaultColor = OV.HexStringToColor (parameters.defaultColor);
+    }
+
     let viewer = new OV.EmbeddedViewer (contentDiv, {
-        backgroundColor : new OV.Color (255, 255, 255),
-        defaultColor : new OV.Color (200, 200, 200),
-        edgeSettings : {
-            showEdges : false,
-            edgeColor : new OV.Color (0, 0, 0),
-            edgeThreshold : 1
-        },
+        backgroundColor : backgroundColor,
+        defaultColor : defaultColor,
         environmentSettings : {
             environmentMap : [
                 'build/envmaps/fishermans_bastion/posx.jpg',
@@ -67,9 +71,12 @@ function OnWindowLoaded ()
 {
     OV.SetExternalLibLocation ('build/libs');
 
+    // TODO: progress bar for model loading
     let parameters = ProcessUrlParameters (window.location.search);
     GetAttachmentFileObjects (parameters.modelFileNames).then ((attachmentFileObjects) => {
         OnModelFilesLoaded (parameters, attachmentFileObjects);
+    }).catch (() => {
+        // TODO: handle error
     });
 }
 
