@@ -38,6 +38,18 @@ var AP = {
                         }
                     },
                     {
+                        title : '2CylinderEngine.gltf',
+                        _links : {
+                            download : 'test/testfiles/2CylinderEngine.gltf'
+                        }
+                    },
+                    {
+                        title : '2CylinderEngine.bin',
+                        _links : {
+                            download : 'test/testfiles/2CylinderEngine.bin'
+                        }
+                    },
+                    {
                         title : 'nonexistingbuthasurl.ext',
                         _links : {
                             download : 'test/testfiles/nonexistingbuthasurl.ext'

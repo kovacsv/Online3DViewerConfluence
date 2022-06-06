@@ -82,7 +82,7 @@ function OnWindowLoaded ()
         contentDiv.removeChild (progressBar);
         OnModelFilesLoaded (parameters, attachmentFileObjects);
     }).catch (() => {
-        progressBar.innerHTML = 'Failed to download attachments'
+        progressBar.innerHTML = 'Failed to download attachments.'
     });
 }
 
