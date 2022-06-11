@@ -1,6 +1,6 @@
 {
     "name": "online-3d-viewer-confluence",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Online 3D Viewer for Confluence",
     "main": "index.js",
     "scripts": {
