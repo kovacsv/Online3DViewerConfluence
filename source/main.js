@@ -60,8 +60,9 @@ function OnModelFilesLoaded (parameters, fileObjects)
         }
     });
 
-    viewer.canvas.width = contentDiv.clientWidth;
-    viewer.canvas.height = contentDiv.clientHeight;
+    let scale = window.devicePixelRatio || 1.0;
+    viewer.canvas.width = contentDiv.clientWidth * scale;
+    viewer.canvas.height = contentDiv.clientHeight * scale;
 
     viewer.LoadModelFromFileList (fileObjects);
 }
