@@ -2,7 +2,7 @@
     "key": "online-3d-viewer-confluence",
     "name": "Online 3D Viewer for Confluence",
     "version": "0.0.1",
-    "description": "Visualize your 3D attachments in Confluence. Supported file formats: obj, 3ds, stl, ply, gltf, glb, off, 3dm, fbx, dae, wrl, 3mf, ifc, bim.",
+    "description": "App to visualize your 3D attachments in Confluence.",
     "vendor": {
         "name": "Viktor Kovács",
         "url": "https://www.kovacsv.hu"
