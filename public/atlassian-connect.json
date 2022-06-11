@@ -7,10 +7,10 @@
         "name": "Viktor Kovács",
         "url": "https://www.kovacsv.hu"
     },
-    "baseUrl": "",
+    "baseUrl": "https://kovacsv.github.io/Online3DViewerConfluence",
     "links": {
-        "self": "TODO",
-        "documentation": "TODO"
+        "self": "https://github.com/kovacsv/Online3DViewerConfluence",
+        "documentation": "https://github.com/kovacsv/Online3DViewerConfluence"
     },
     "authentication": {
         "type": "none"

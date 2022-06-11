@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "esbuild source/main.js --bundle --minify --sourcemap --outfile=public/build/o3dv-confluence.js",
-        "dist": "npm run bundle && npm run copylibs && npm run copyenvmaps",
+        "dist": "npm run build && npm run copylibs && npm run copyenvmaps",
         "copylibs": "copyfiles --up 3 node_modules/online-3d-viewer/libs/loaders/* public/build/libs",
         "copyenvmaps": "copyfiles --up 5 node_modules/online-3d-viewer/website/assets/envmaps/**/* public/build/envmaps",
         "ngrok_server": "node tools/ngrokserver.js",
