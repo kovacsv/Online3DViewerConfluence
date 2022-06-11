@@ -1,0 +1,23 @@
+#content > div
+{
+    background: #ffffff;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0px 0px 5px #cccccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#content > div::before
+{
+    content: '';
+    background: url('images/3dviewer_net_logo.png');
+    width: 64px;
+    height: 64px;
+    margin: 0px auto 10px auto;
+    display: block;
+}
