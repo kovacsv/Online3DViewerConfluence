@@ -1,7 +1,7 @@
 {
     "key": "online-3d-viewer-confluence",
     "name": "Online 3D Viewer for Confluence",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "App to visualize your 3D attachments in Confluence.",
     "vendor": {
         "name": "Viktor Kovács",
@@ -38,10 +38,10 @@
                     {
                         "identifier": "file1",
                         "name": {
-							"value": "Main Model File"
+                            "value": "Main Model File"
                         },
                         "description": {
-							"value": "This is the main file for the 3D model. If the model requires more files (like textures), you can add them below as additional model files."
+                            "value": "This is the main file for the 3D model. If the model requires more files (like textures), you can add them below as additional model files."
                         },
                         "type": "attachment",
                         "required": true,
