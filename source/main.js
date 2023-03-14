@@ -31,21 +31,21 @@ function OnModelFilesLoaded (parameters, fileObjects)
 {
     OV.SetExternalLibLocation ('build/libs');
 
-    let backgroundColor = new OV.Color (255, 255, 255);
+    let backgroundColor = new OV.RGBAColor (255, 255, 255, 0);
     if (parameters.backgroundColor.length == 6) {
-        backgroundColor = OV.HexStringToColor (parameters.backgroundColor);
+        backgroundColor = OV.HexStringToRGBAColor (parameters.backgroundColor);
     }
-    let defaultColor = new OV.Color (200, 200, 200);
+    let defaultColor = new OV.RGBColor (200, 200, 200);
     if (parameters.defaultColor.length == 6) {
-        defaultColor = OV.HexStringToColor (parameters.defaultColor);
+        defaultColor = OV.HexStringToRGBColor (parameters.defaultColor);
     }
 
     let contentDiv = document.getElementById ('content');
     let viewer = new OV.EmbeddedViewer (contentDiv, {
         backgroundColor : backgroundColor,
         defaultColor : defaultColor,
-        environmentSettings : {
-            environmentMap : [
+        environmentSettings : new OV.EnvironmentSettings (
+            [
                 'build/envmaps/fishermans_bastion/posx.jpg',
                 'build/envmaps/fishermans_bastion/negx.jpg',
                 'build/envmaps/fishermans_bastion/posy.jpg',
@@ -53,11 +53,8 @@ function OnModelFilesLoaded (parameters, fileObjects)
                 'build/envmaps/fishermans_bastion/posz.jpg',
                 'build/envmaps/fishermans_bastion/negz.jpg'
             ],
-            backgroundIsEnvMap : false
-        },
-        onModelLoaded : () => {
-
-        }
+            false
+        )
     });
 
     let scale = window.devicePixelRatio || 1.0;
@@ -87,4 +84,6 @@ function OnWindowLoaded ()
     });
 }
 
-window.onload = OnWindowLoaded;
+window.addEventListener ('load', () => {
+    OnWindowLoaded ();
+});
