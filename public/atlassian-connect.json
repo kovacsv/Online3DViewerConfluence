@@ -1,7 +1,7 @@
 {
     "key": "online-3d-viewer-confluence",
     "name": "Online 3D Viewer for Confluence",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "App to visualize your 3D attachments in Confluence.",
     "vendor": {
         "name": "Viktor Kovács",
