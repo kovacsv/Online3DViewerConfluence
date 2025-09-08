@@ -10,7 +10,6 @@ app.listen (port);
 console.log ('Server listening on port: ' + port.toString ());
 
 (async function () {
-    console.log (process.env);
     let connection = await ngrok.connect ({
         addr : port,
         authtoken : process.env.NGROK_AUTHTOKEN
