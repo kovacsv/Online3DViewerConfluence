@@ -6,8 +6,7 @@
     "scripts": {
         "build": "esbuild source/main.js --bundle --minify --sourcemap --outfile=public/build/o3dv-confluence.js",
         "build_dist": "esbuild source/main.js --bundle --minify --outfile=public/build/o3dv-confluence.js",
-        "dist": "npm run build_dist && npm run copylibs && npm run copyenvmaps",
-        "copylibs": "copyfiles --up 3 node_modules/online-3d-viewer/libs/loaders/* public/build/libs",
+        "dist": "npm run build_dist && npm run copyenvmaps",
         "copyenvmaps": "copyfiles --up 5 node_modules/online-3d-viewer/website/assets/envmaps/**/* public/build/envmaps",
         "ngrok_server": "node tools/ngrokserver.js",
         "local_server": "npm run dist && http-server"
@@ -23,6 +22,6 @@
         "ngrok": "^4.0.0"
     },
     "dependencies": {
-        "online-3d-viewer": "0.8.25"
+        "online-3d-viewer": "0.16.0"
     }
 }

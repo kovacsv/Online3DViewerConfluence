@@ -29,8 +29,6 @@ function ProcessUrlParameters (url)
 
 function OnModelFilesLoaded (parameters, fileObjects)
 {
-    OV.SetExternalLibLocation ('build/libs');
-
     let backgroundColor = new OV.RGBAColor (255, 255, 255, 0);
     if (parameters.backgroundColor.length == 6) {
         backgroundColor = OV.HexStringToRGBAColor (parameters.backgroundColor);
