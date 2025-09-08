@@ -1,7 +1,7 @@
 let fs = require ('fs');
 let path = require ('path');
 let express = require ('express');
-let ngrok = require ('ngrok');
+let ngrok = require ('@ngrok/ngrok');
 
 let app = express ();
 let port = 8080;
@@ -10,9 +10,12 @@ app.listen (port);
 console.log ('Server listening on port: ' + port.toString ());
 
 (async function () {
-    let publicUrl = await ngrok.connect ({
-        addr : port
+    console.log (process.env);
+    let connection = await ngrok.connect ({
+        addr : port,
+        authtoken : process.env.NGROK_AUTHTOKEN
     });
+    let publicUrl = connection.url ();
     let connectUrl = publicUrl + '/atlassian-connect.json';
     console.log ('Public url: ' + publicUrl);
     console.log ('Connect url: ' + connectUrl);

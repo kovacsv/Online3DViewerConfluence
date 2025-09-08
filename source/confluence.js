@@ -3,7 +3,7 @@ function GetAttachmentDownloadUrls (attachmentNames)
     return new Promise ((resolve, reject) => {
         AP.context.getContext ().then ((response) => {
             let pageId = response.confluence.content.id;
-            return AP.request ('/rest/api/content/' + pageId + '/child/attachment');
+            return AP.request ('/api/v2/pages/' + pageId + '/attachments');
         }).then ((response) => {
             let contents = JSON.parse (response.body);
             let attachmentUrls = [];
