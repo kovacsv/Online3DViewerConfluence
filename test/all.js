@@ -16,7 +16,7 @@ var AP = {
     },
 
     request : (url) => {
-        if (url === '/rest/api/content/' + AP.pageId.toString () + '/child/attachment') {
+        if (url === '/api/v2/pages/' + AP.pageId.toString () + '/attachments') {
             let resultJson = {
                 results : [
                     {
